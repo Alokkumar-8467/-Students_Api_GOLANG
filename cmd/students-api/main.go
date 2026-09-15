@@ -19,11 +19,6 @@ func main() {
 
 	
 	// database setup
-	storage, err := sqlite.New(cfg)
-	if err != nil {
-		log.Fatal("failed to connect to database:", err)
-	}
-	log.Println("storage initialized", slogAddr(cfg))
 
 	// setup router
 	router := http.NewServeMux()
