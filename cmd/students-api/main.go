@@ -8,7 +8,6 @@ import (
 	"github.com/alokMIPL/students-api/internal/config"
 )
 
-
 func main() {
 
 	fmt.Println("Welcome to students api")
@@ -25,7 +24,6 @@ func main() {
 	router.HandleFunc("GET /", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("Welcome to students api"))
 	})
-
 
 	// setup server
 	server := http.Server{
