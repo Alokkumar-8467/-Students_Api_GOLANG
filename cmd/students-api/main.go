@@ -17,7 +17,6 @@ func main() {
 	cfg := config.MustLoad()
 	log.Println("Environment:", cfg.Env)
 
-	
 	// database setup
 
 	// setup router
@@ -27,16 +26,6 @@ func main() {
 		w.Write([]byte("Welcome to students api"))
 	})
 
-	router.HandleFunc("POST /students", student.New(storage))
-	router.HandleFunc("GET /students/{id}", student.GetById(storage))
-	router.HandleFunc("GET /students", student.GetList(storage))
-
-	// wrap router with middleware chain
-	handler := middleware.Chain(router,
-		middleware.RecoveryMiddleware,
-		middleware.LoggingMiddleware,
-		middleware.CORSMiddleware,
-	)
 
 	server := http.Server{
 		Addr:    cfg.Addr,
