@@ -17,6 +17,7 @@ func main() {
 	cfg := config.MustLoad()
 	log.Println("Environment:", cfg.Env)
 
+	
 	// database setup
 	storage, err := sqlite.New(cfg)
 	if err != nil {
