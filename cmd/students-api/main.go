@@ -1,20 +1,13 @@
 package main
 
 import (
-	"context"
 	"fmt"
 	"log"
 	"net/http"
-	"os"
-	"os/signal"
-	"syscall"
-	"time"
 
 	"github.com/alokMIPL/students-api/internal/config"
-	"github.com/alokMIPL/students-api/internal/http/handlers/student"
-	"github.com/alokMIPL/students-api/internal/http/middleware"
-	"github.com/alokMIPL/students-api/internal/storage/sqlite"
 )
+
 
 func main() {
 
