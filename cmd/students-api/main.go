@@ -27,10 +27,12 @@ func main() {
 	})
 
 
+	// setup server
 	server := http.Server{
 		Addr:    cfg.Addr,
-		Handler: handler,
+		Handler: router,
 	}
+
 
 	// Run server in a goroutine so it doesn't block shutdown handling
 	go func() {
