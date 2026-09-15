@@ -13,6 +13,7 @@ func main() {
 	fmt.Println("Welcome to students api")
 
 	// Load config
+	
 	cfg := config.MustLoad()
 	log.Println("Environment:", cfg.Env)
 
