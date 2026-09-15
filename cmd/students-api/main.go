@@ -31,10 +31,15 @@ func main() {
 		Handler: router,
 	}
 
-	fmt.Println("Server stared as = ", cfg.HTTPServer.Addr)
-	err := server.ListenAndServe()
-	if err != nil {
-		log.Fatal("Failed to start server")
-	}
+	done := make(chan os.Signal, 1)
+
+	signal.Notify(done, os.Interrupt, syscall.SIGINT, syscall.SIGTERM)
+
+	go func() {
+		err := server.ListenAndServe()
+		if err != nil {
+			log.Fatal("Failed to start server")
+		}
+	}()
 
 }
