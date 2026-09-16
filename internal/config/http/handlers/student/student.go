@@ -10,3 +10,8 @@ import (
 	"github.com/alokMIPL/students-api/internal/types"
 	"github.com/alokMIPL/students-api/internal/utils/response"
 )
+
+func New() http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+
+		var student types.Student
