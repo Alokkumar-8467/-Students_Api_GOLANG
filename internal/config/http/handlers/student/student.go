@@ -23,3 +23,8 @@ func New() http.HandlerFunc {
 		slog.Info("Creating a student")
 
 		// How to get data in GO
+
+		w.Write([]byte("Welcome to Students API."))
+	}
+
+}
