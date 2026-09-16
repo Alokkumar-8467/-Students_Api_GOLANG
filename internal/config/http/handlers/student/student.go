@@ -40,6 +40,7 @@ func New() http.HandlerFunc {
 
 		// How to get data in GO
 
+		// w.Write([]byte("Welcome to Students API."))
 		response.WriteJson(w, http.StatusCreated, map[string]string{"success": "OK"})
 	}
 
