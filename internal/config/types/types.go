@@ -1,7 +1,7 @@
 package types
 
 type Student struct {
-	Id    int
+	Id    int64
 	Name  string
 	Email string
 	Age   int
