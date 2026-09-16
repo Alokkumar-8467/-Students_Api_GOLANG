@@ -5,6 +5,16 @@ import (
 	"net/http"
 )
 
+type Response struct {
+	Status string
+	Error  string
+}
+
+const (
+	Status      = "OK"
+	StatusError = "Error"
+)
+
 func WriteJson(w http.ResponseWriter, status int, data interface{}) error {
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(status)
