@@ -22,3 +22,10 @@ func WriteJson(w http.ResponseWriter, status int, data interface{}) error {
 	return json.NewEncoder(w).Encode(data)
 
 }
+
+func GeneralError(err error) Response {
+	return Response{
+		Status: StatusError,
+		Error:  err.Error(),
+	}
+}
