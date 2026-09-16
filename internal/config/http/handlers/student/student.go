@@ -19,3 +19,7 @@ func New() http.HandlerFunc {
 		if errors.Is(err, io.EOF) {
 			response.WriteJson(w, http.StatusBadRequest, err.Error())
 		}
+
+		slog.Info("Creating a student")
+
+		// How to get data in GO
