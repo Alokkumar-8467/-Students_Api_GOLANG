@@ -10,6 +10,7 @@ import (
 
 	"github.com/alokMIPL/students-api/internal/types"
 	"github.com/alokMIPL/students-api/internal/utils/response"
+	"github.com/go-playground/validator/v10"
 )
 
 func New() http.HandlerFunc {
